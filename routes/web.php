@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PublicController;
+use App\Http\Controllers\BreweryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [PublicController::class, 'homepage'])->name('homepage');
+Route::get('/brewery/create', [BreweryController::class, 'create'])->name('brewery.create');
+Route::post('/brewery/store', [BreweryController::class, 'store'])->name('brewery.store');
+Route::get('/brewery/index', [BreweryController::class, 'index'])->name('brewery.index');
