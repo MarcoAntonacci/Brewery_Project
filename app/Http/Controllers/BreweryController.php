@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Beer;
 use App\Models\Brewery;
 use Illuminate\Http\Request;
 
@@ -55,9 +56,16 @@ class BreweryController extends Controller
      */
     public function show(Brewery $brewery)
     {
-        //
+        $beers = Beer::all();
+        return view('brewery.show', compact('brewery', 'beers'));
     }
 
+    public function beers(Request $request , Brewery $brewery) {
+
+        $brewery->beers()->attach($request->beer);
+
+        return redirect()->back();
+    }
     /**
      * Show the form for editing the specified resource.
      *
@@ -66,7 +74,7 @@ class BreweryController extends Controller
      */
     public function edit(Brewery $brewery)
     {
-        //
+       return view('brewery.edit', compact('brewery'));
     }
 
     /**
@@ -78,7 +86,17 @@ class BreweryController extends Controller
      */
     public function update(Request $request, Brewery $brewery)
     {
-        //
+        $brewery->name= $request->name;
+        $brewery->description= $request->description;
+        $brewery->address= $request->address;                           // qui stiamo rifacendo l'assegnazione
+        $brewery->email= $request->email;
+
+        if ($request->img) {
+            $brewery->img = $request->file('img')->store('public/img');
+        }
+        $brewery->save();
+
+        return redirect(route('brewery.index'));
     }
 
     /**
@@ -89,6 +107,10 @@ class BreweryController extends Controller
      */
     public function destroy(Brewery $brewery)
     {
-        //
+        foreach($brewery->beers as $beer) {
+            $brewery->beers()->detach($beer->id);        //se non avessi aggiunto queste righe di codice, ci sarebbe stata una violazione del vincolo
+        }                                                //di integrità referenziale, perciò bisogna fare il detach
+        $brewery->delete();
+        return redirect(route('brewery.index'));
     }
 }

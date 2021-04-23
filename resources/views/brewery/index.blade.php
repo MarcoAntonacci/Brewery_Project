@@ -18,7 +18,8 @@
                   <h5 class="card-title">{{$brewery->name}}</h5>
                   <p class="card-text">{{$brewery->address}}</p>
                   <p class="card-text">{{$brewery->email}}</p>
-                  <a href="#" class="btn btn-primary">Dettaglio</a>
+                  <p class="card-text">Inserita il {{$brewery->created_at->format('d-m-Y')}}</p>
+                  <a href="{{route('brewery.show', compact('brewery'))}}" class="btn btn-primary">Dettaglio</a>
                 </div>
               </div>
         </div>
