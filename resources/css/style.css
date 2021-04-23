@@ -1,3 +1,27 @@
 * {
     font-family: 'Oswald', sans-serif;
 }
+
+body{
+    background-color: #D3D3D3;
+}
+
+/* .font-size-img{
+    width: 60px;
+    height: 75px;
+} */
+
+.bg-navbar{
+    background-color: rgba(255, 255, 255, 0.89);
+}
+
+.a-color {
+    color: #4F2716;
+    font-size: 18px;
+    transition: ease-in-out 0.5s;
+}
+
+.a-color:hover{
+    color: #ECAC00;
+}
+

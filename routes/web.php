@@ -26,3 +26,6 @@ Route::get('/brewery/edit/{brewery}',[BreweryController::class, 'edit'])->name('
 Route::post('/brewery/update/{brewery}',[BreweryController::class, 'update'])->name('brewery.update');
 
 Route::delete('/brewery/destroy/{brewery}', [BreweryController::class, 'destroy'])->name('brewery.destroy');
+
+Route::get('/contact', [PublicController::class, 'contact'])->name('contact');
+Route::post('/contact/submit', [PublicController::class, 'submit'])->name('contact.submit');
