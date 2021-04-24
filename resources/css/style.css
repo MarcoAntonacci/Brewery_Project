@@ -1,15 +1,33 @@
 * {
     font-family: 'Oswald', sans-serif;
+    color: var(--black);
+}
+
+:root {
+    --main-color:#4F2716;
+    --accent-color:#ECAC00;
+    --black:#100804;
+    --white:#FBF3EF;
+
 }
 
 body{
-    background-color: #D3D3D3;
+    background-color: #FBF3EF;
 }
 
-/* .font-size-img{
-    width: 60px;
-    height: 75px;
-} */
+.h1-color{
+    color: var(--accent-color);
+}
+.carousel-item {
+    height: 65vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
 
 .bg-navbar{
     background-color: rgba(255, 255, 255, 0.89);
@@ -23,5 +41,151 @@ body{
 
 .a-color:hover{
     color: #ECAC00;
+
 }
 
+.i-color{
+    color: var(--main-color);
+}
+
+.btn-color {
+    color: var(--white);
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+}
+
+.text-color{
+    color: var(--main-color);
+}
+
+.text-color2{
+    color: var(--accent-color);
+}
+
+.text-color3{
+    color: var(--black);
+}
+
+.bg-footer{
+    background-color: var(--main-color);
+}
+
+.text-footer{
+    color: var(--white);
+}
+
+  .card-signin {
+    border: 0;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+
+  .card-signin .card-title {
+    margin-bottom: 2rem;
+    font-weight: 300;
+    font-size: 1.5rem;
+  }
+
+  .card-signin .card-img-left {
+    width: 45%;
+    /* Link to your background image using in the property below! */
+    background: scroll center url('https://images.unsplash.com/photo-1600788886242-5c96aabe3757?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80');
+    background-size: cover;
+  }
+
+  .card-signin .card-body {
+    padding: 2rem;
+  }
+
+  .form-signin {
+    width: 100%;
+  }
+
+  .form-signin .btn {
+    font-size: 80%;
+    border-radius: 5rem;
+    letter-spacing: .1rem;
+    font-weight: bold;
+    padding: 1rem;
+    transition: all 0.2s;
+  }
+
+  .form-label-group {
+    position: relative;
+    margin-bottom: 1rem;
+  }
+
+  .form-label-group input {
+    height: auto;
+    border-radius: 2rem;
+  }
+
+  .form-label-group>input,
+  .form-label-group>label {
+    padding: var(--input-padding-y) var(--input-padding-x);
+  }
+
+  .form-label-group>label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    margin-bottom: 0;
+    /* Override default `<label>` margin */
+    line-height: 1.5;
+    color: #495057;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    transition: all .1s ease-in-out;
+  }
+
+  .form-label-group input::-webkit-input-placeholder {
+    color: transparent;
+  }
+
+  .form-label-group input:-ms-input-placeholder {
+    color: transparent;
+  }
+
+  .form-label-group input::-ms-input-placeholder {
+    color: transparent;
+  }
+
+  .form-label-group input::-moz-placeholder {
+    color: transparent;
+  }
+
+  .form-label-group input::placeholder {
+    color: transparent;
+  }
+
+  .form-label-group input:not(:placeholder-shown) {
+    padding-top: calc(var(--input-padding-y) + var(--input-padding-y) * (2 / 3));
+    padding-bottom: calc(var(--input-padding-y) / 3);
+  }
+
+  .form-label-group input:not(:placeholder-shown)~label {
+    padding-top: calc(var(--input-padding-y) / 3);
+    padding-bottom: calc(var(--input-padding-y) / 3);
+    font-size: 12px;
+    color: #777;
+  }
+
+  .card-body{
+      background-color: #FBF3EF;
+      transition: ease-out 0.8s;
+  }
+
+
+
+  .btn-color2{
+    color: var(--white);
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+  }
+
+  .btn:hover {
+    color:var(--black);
+}
